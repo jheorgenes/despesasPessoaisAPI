@@ -20,15 +20,18 @@ public class Despesa implements Serializable {
 	private String nome;
 
 	private String formaPagamento;
+	
+	private String tipoLancamento;
 
 	private Double valor;
 
 	public Despesa() {}
 
-	public Despesa(Integer id, @NotEmpty(message = "Nome é obrigatório") String nome, String formaPagamento, Double valor) {
+	public Despesa(Integer id, @NotEmpty(message = "Nome é obrigatório") String nome, String formaPagamento, String tipoLancamento, Double valor) {
 		this.id = id;
 		this.nome = nome;
 		this.formaPagamento = formaPagamento;
+		this.tipoLancamento = tipoLancamento;
 		this.valor = valor;
 	}
 
@@ -64,4 +67,11 @@ public class Despesa implements Serializable {
 		this.valor = valor;
 	}
 
+	public String getTipoLancamento() {
+		return tipoLancamento;
+	}
+
+	public void setTipoLancamento(String tipoLancamento) {
+		this.tipoLancamento = tipoLancamento;
+	}
 }

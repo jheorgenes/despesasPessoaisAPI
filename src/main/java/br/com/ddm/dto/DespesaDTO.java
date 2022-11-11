@@ -8,6 +8,8 @@ public class DespesaDTO {
 	private String nome;
 
 	private String formaPagamento;
+	
+	private String tipoLancamento;
 
 	private Double valor;
 
@@ -17,6 +19,7 @@ public class DespesaDTO {
 		this.id = obj.getId();
 		this.nome = obj.getNome();
 		this.formaPagamento = obj.getFormaPagamento();
+		this.tipoLancamento = obj.getTipoLancamento();
 		this.valor = obj.getValor();
 	}
 
@@ -50,5 +53,13 @@ public class DespesaDTO {
 
 	public void setValor(Double valor) {
 		this.valor = valor;
+	}
+
+	public String getTipoLancamento() {
+		return tipoLancamento;
+	}
+
+	public void setTipoLancamento(String tipoLancamento) {
+		this.tipoLancamento = tipoLancamento;
 	}
 }

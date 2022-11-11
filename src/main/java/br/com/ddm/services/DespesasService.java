@@ -29,7 +29,7 @@ public class DespesasService {
 	}
 	
 	public Despesa create(@Valid DespesaDTO objDTO) {
-		Despesa newObj = new Despesa(null, objDTO.getNome(), objDTO.getFormaPagamento(), objDTO.getValor());
+		Despesa newObj = new Despesa(null, objDTO.getNome(), objDTO.getFormaPagamento(), objDTO.getTipoLancamento(), objDTO.getValor());
 		return despesaRepository.save(newObj);
 	}
 	
@@ -47,6 +47,7 @@ public class DespesasService {
 	private void dataUpdate(DespesaDTO objDTO, Despesa oldObj) {
 		oldObj.setNome(objDTO.getNome());
 		oldObj.setFormaPagamento(objDTO.getFormaPagamento());
+		oldObj.setTipoLancamento(objDTO.getTipoLancamento());
 		oldObj.setValor(objDTO.getValor());
 	}
 }
